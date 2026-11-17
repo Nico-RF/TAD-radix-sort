@@ -16,7 +16,7 @@ typedef struct tipoCelda {
 
 typedef struct {
 	tipoCelda * raiz , *ultimo;
-	} Lista;
+} Lista;
 
 typedef tipoCelda *tipoPosicion;
 
