@@ -32,7 +32,7 @@ __Nota:__ Informe: **xx.x**. <br />
       ├── pilas/        
       │   ├── pila.c    
       │   └── pila.h   
-      ├── Makefile       # Automatización de la compilación
+      ├── makefile       # Automatización de la compilación
       └── README.md      # Documentación del proyecto
 
 ## Ejecución:
