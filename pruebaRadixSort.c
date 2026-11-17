@@ -1,3 +1,12 @@
+/*
+    LISTA DE COSAS POR HACER:
+    1. PONER BIEN LOS CODIGOS DE ERROR DE LOS RETURN
+    2. radixSort.h
+    3. FUNCION distribuir (cifra, lista, *Grupos, *Ultimos)
+    4. FUNCION concatenar (lista, *Grupos, *Ultimos)
+*/  
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"

@@ -16,7 +16,7 @@ typedef struct tipoCelda {
 
 
 typedef struct {
-        tipoCelda *frente, *fondo;
+        tipoCelda *frente, *fondo, *tamanio;
 } Cola;
 
 int colaCreaVacia(Cola *c);

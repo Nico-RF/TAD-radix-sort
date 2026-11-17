@@ -26,7 +26,7 @@ int pilaVacia(Pila *p);
 
 int pilaInserta(Pila *p,tipoElemento elemento);
 
-int pilaSuprime(Pila *p, , tipoElemento *elemento);
+int pilaSuprime(Pila *p, tipoElemento *elemento);
 
 
 #endif

@@ -18,8 +18,25 @@ __Nota:__ Informe: **xx.x**. <br />
 <br />
 
 ## Enunciado:
+Práctica obligatoria para todos los grupos, que consiste en la implementación y/o utilización de los Tipos Abstractos de Datos explicados en teoría y que forman parte de los enunciados de prácticas del tema. De forma resumida, se trata de realizar las siguientes tareas:
 
-<br />
+- Implementación del algoritmo de ordenación RadixSort utilizando el TAD Lista
+- Ampliación del TAD Lista con algunas funciones que facilitarán la nueva implementación de RadixSort
+- Estudio experimental del algoritmo RadixSort
+- Implementación del TAD pila mediante lista simplemente enlazada sin nodo ficticio
+- Implementación del TAD cola mediante lista simplemente enlazada sin nodo ficticio
+
+Para la realización de la práctica se entrega un fichero, entregaTAD2026.zip, que contiene:
+
+- entregaTAD2026.pdf con el enunciado detallado de la práctica a entregar
+- pruebaRadixSort.c, fichero de código C con una función main() y todo lo necesario para poder hacer la prueba de funcionamiento del algoritmo de ordenación RadixSort
+- listas, carpeta con el fichero cabecera lista.h
+- Un fichero makefile que permite la compilación de pruebaRadixSort.c utilizando la implementación del TAD lista
+- pilas, carpeta que contiene el ficheros de cabecera pila.h con las definiciones de tipos y prototipos del TAD Pila
+- colas, carpeta que contiene los ficheros de cabecera cola.h con las definiciones de tipos y prototipos de  TAD Cola
+
+Para la entrega se deben completar los ficheros indicados en el enunciado de la práctica, en las correspondientes carpetas, y generar un fichero .zip con toda la estructura. 
+
 <br />
 
 ## Arquitectura del proyecto:
@@ -27,12 +44,16 @@ __Nota:__ Informe: **xx.x**. <br />
       ├── colas/        
       │   ├── cola.c      
       │   └── cola.h    
-      ├── listas/         
-      │   └── listas.h    
+      ├── listas/
+      ├── ├── lista.c         
+      │   └── lista.h    
       ├── pilas/        
       │   ├── pila.c    
-      │   └── pila.h   
+      │   └── pila.h
       ├── makefile       # Automatización de la compilación
+      ├── pruebaRadixSort.c
+      ├── radixSort.c
+      ├── radixSort.h
       └── README.md      # Documentación del proyecto
 
 ## Ejecución:
