@@ -24,13 +24,14 @@ __Nota:__ Informe: **xx.x**. <br />
 
 ## Arquitectura del proyecto:
     TAD-radix-sort/  # Root del proyecto
-      ├── head/        # Definiciones y prototipos
-      │   ├── lista.h    # Definición y prototipos de listas simplemente enlazadas  
-      │   └── radix.h    # Prototipos de las funciones de ordenamiento Radix Sort
-      ├── src/         # Implementaciones
-      │   ├── lista.c    # Implementación de listas enlazadas
-      │   ├── radix.c    # Lógica del algoritmo Radix Sort con estructuras
-      │   └── main.c     # Punto de entrada y casos de prueba
+      ├── colas/        
+      │   ├── cola.c      
+      │   └── cola.h    
+      ├── listas/         
+      │   └── listas.h    
+      ├── pilas/        
+      │   ├── pila.c    
+      │   └── pila.h   
       ├── Makefile       # Automatización de la compilación
       └── README.md      # Documentación del proyecto
 
@@ -38,7 +39,6 @@ __Nota:__ Informe: **xx.x**. <br />
 Para que funcione el proyecto, en terminal (por ejemplo, de un entorno WSL), deberemos:
 1. Compilar el proyecto:
 > make
-
 
 2. Ejecutar el programa:
 > ./radix_sort
