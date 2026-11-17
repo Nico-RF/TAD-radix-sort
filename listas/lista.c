@@ -1,5 +1,4 @@
 // Estos archivos se supone que son nuestro magic alonso para empezar
-// Aqui falta implementar int traspasarNodo(tipoPosicion p, Lista *la, tipoPosicion q, Lista *lb);
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -218,6 +217,34 @@ int anula(Lista *l)
     return 0;
 }
 
+int traspasarNodo(tipoPosicion p, Lista *la, tipoPosicion q, Lista *lb) {
+    /*
+        Asumimos que si p o q != NULL, son una posición VÁLIDA de la lista enlazada.
+    */
+
+    tipoCelda *aux;
+
+    if (la == NULL || lb == NULL) {
+        fprintf(stderr, "Fallo precondición: alguna de las listas no existe o no está inicializada!\n");
+        return -1;
+    }
+
+    if (la->raiz == NULL || la->ultimo == NULL || lb->raiz == NULL || lb->ultimo == NULL) {
+        fprintf(stderr, "Fallo precondición: No hay nodo ficticio en alguna de las listas\n");
+        return -2;
+    }
+    if (p == NULL || p == fin(la) || q == NULL) 
+        return -3;
+
+    // poner el nodo en la posicion p de la en la posicion q de lb
+    aux = p->sig;
+    p->sig = p->sig->sig;
+    aux->sig = q->sig;
+    q->sig = aux;
+
+    return 0;
+}
+
 int concatenarListas(Lista *lA, Lista *lB)
 {
     tipoCelda *actualB;
@@ -249,3 +276,4 @@ int concatenarListas(Lista *lA, Lista *lB)
     }
     return 0;
 }
+
