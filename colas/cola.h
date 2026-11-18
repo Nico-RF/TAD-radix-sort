@@ -11,12 +11,12 @@ typedef int tipoElemento;
 typedef struct tipoCelda {
 	tipoElemento elemento;
 	struct tipoCelda * sig;
-	} tipoCelda;
+} tipoCelda;
 #endif
 
 
 typedef struct {
-        tipoCelda *frente, *fondo, *tamanio;
+    tipoCelda *frente, *fondo;
 } Cola;
 
 int colaCreaVacia(Cola *c);

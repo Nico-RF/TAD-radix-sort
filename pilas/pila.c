@@ -1,23 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
-#include "pila.h"
+#include "../pilas/pila.h"
 
 
 
 int pilaCreaVacia(Pila *p)
 {
-    return(p.raiz = NULL);
+    if (p == NULL) return -1;
+    *p = NULL;
+    return 0;
 }
 
 int pilaVacia(Pila *p)
 {
-    if (p == NULL) return TRUE;
-    else return FALSE;
+    if (*p == NULL) return -1;
+    else if (p == NULL) return 1;
+    else return 0;
 }
 
 int pilaInserta(Pila *p,tipoElemento elemento)
 {
+    /*
+    if (NULL == malloc(sizeof(tipoCelda)) || p == NULL) return -n;
+    malloc(sizeof(tipoCelda))
+    nuevo->elemento = elemento;
+    nuevo->sig = *p;
+    *p = nuevo;
+    return 0;
+    */
     if (p.raiz = p.ultimo) return -3; // Pila llena
     else
     {
@@ -28,11 +39,13 @@ int pilaInserta(Pila *p,tipoElemento elemento)
 
 int pilaSuprime(Pila *p, tipoElemento *elemento)
 {
-   if (pilaVacia(p) == TRUE) return -4; // Pila vacía
+   if (pilaVacia(p) == 1) return -4; // Pila vacía
    else
    {
-        valor = p.elemento[p.raiz];
-        p.raiz = p.raiz - 1;
-        return valor;
+        *elemento = (*p)->elemento;
+        aBorrar = *p;
+        *p = aBorrar->sig;
+        free(aBorrar)
+        return 0;
    }
 }

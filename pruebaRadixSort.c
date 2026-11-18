@@ -1,6 +1,6 @@
 /*
     LISTA DE COSAS POR HACER:
-    1. PONER BIEN LOS CODIGOS DE ERROR DE LOS RETURN (con strdrr)
+    1. PONER BIEN LOS CODIGOS DE ERROR DE LOS RETURN
     2. Rehacer la cola
     3. FUNCION distribuir (cifra, lista, *Grupos, *Ultimos)
     4. FUNCION concatenar (lista, *Grupos, *Ultimos)
@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "lista.h"
 #include "radixSort.h"
+
 int purga(Lista *l);
 
 int main(int argc, char *argv[])

@@ -1,9 +1,15 @@
 // Nico was here
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include "radixSort.h"
+#include "../listas/lista.h"
 
-void extraerCifra
-void recupera
-void distribuir
-void concatenar
+
+void extraerCifra();
+void recupera();
+void distribuir();
+void concatenar();
 
 int radixSort(Lista *miLista, int nGrupos, int nCifras) 
 { // hay que revisar que esté bien el radixSort
@@ -16,20 +22,20 @@ int radixSort(Lista *miLista, int nGrupos, int nCifras)
             ptGrupos[k] = NULL;
             ptUltimos[k] = NULL;
         }
-        distribuir (cifra, lista, *Grupos, *Ultimos)
-        concatenar (lista, *Grupos, *Ultimos)
+        distribuir(cifra, lista, *Grupos, *Ultimos);
+        concatenar(lista, *Grupos, *Ultimos);
     }
 }
 
-void distribuir
+void distribuir()
 {
     tipoPosicion aux;
     int cifra;
     aux = primero(miLista);
 
-    while !vacia miLista
+    while (!vacia(miLista))
     {
-        cifra = extraerCifra(recupera(aux,milista ) posiciom)
+        cifra = extraerCifra(recupera(aux,miLista), posicion);
         traspasarNodo(argumentos);
         aux = primero(milista);
     }

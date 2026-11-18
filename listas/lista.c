@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
-#include "lista.h"
+#include "../listas/lista.h"
 
 int creaVacia(Lista *l)
 {
@@ -82,12 +82,12 @@ tipoPosicion primero(Lista *l)
 {
     if (l == NULL)
     {
-        fprintf(stderr, "Fallo precondición lista no existente!\n");
+        // fprintf(stderr, "Fallo precondición lista no existente!\n");
         return NULL;
     }
     else if (l->raiz == NULL)
     {
-        fprintf(stderr, "Fallo precondición lista no inicializada!\n");
+        // fprintf(stderr, "Fallo precondición lista no inicializada!\n");
         return NULL;
     }
     else
@@ -98,12 +98,12 @@ tipoPosicion fin(Lista *l)
 {
     if (l == NULL)
     {
-        fprintf(stderr, "Fallo precondición lista no existente!\n");
+        // fprintf(stderr, "Fallo precondición lista no existente!\n");
         return NULL;
     }
     else if (l->ultimo == NULL)
     {
-        fprintf(stderr, "Fallo precondición lista no existente!\n");
+        // fprintf(stderr, "Fallo precondición lista no existente!\n");
         return NULL;
     }
     else
@@ -116,22 +116,22 @@ int inserta(tipoElemento x, tipoPosicion p, Lista *l)
 
     if (l == NULL)
     {
-        fprintf(stderr, "Fallo precondición lista no existente!\n");
+        // fprintf(stderr, "Fallo precondición lista no existente!\n");
         return -1;
     }
     else if (l->raiz == NULL)
     {
-        fprintf(stderr, "Fallo precondición nodo ficticio no existente!\n");
+        // fprintf(stderr, "Fallo precondición nodo ficticio no existente!\n");
         return -2;
     }
     else if (p == NULL)
     {
-        fprintf(stderr, "Fallo precondición posición no válida!\n");
+        // fprintf(stderr, "Fallo precondición posición no válida!\n");
         return -3;
     }
     else if (NULL == (nuevo = (tipoCelda *)malloc(sizeof(tipoCelda))))
     {
-        fprintf(stderr, "Fallo reserva memoria!\n");
+        // fprintf(stderr, "Fallo reserva memoria!\n");
         return -4;
     }
     else
@@ -190,7 +190,7 @@ tipoElemento recupera(tipoPosicion p, Lista *l)
 {
     if (l == NULL || p == NULL || p->sig == NULL)
     {
-        fprintf(stderr, "Error: Posición inválida para recuperar.\n");
+        // fprintf(stderr, "Error: Posición inválida para recuperar.\n");
         return -1;
     }
     return p->sig->elemento;
@@ -223,17 +223,19 @@ int traspasarNodo(tipoPosicion p, Lista *la, tipoPosicion q, Lista *lb) {
     tipoCelda *aux;
 
     if (la == NULL || lb == NULL) {
-        fprintf(stderr, "Fallo precondición: alguna de las listas no existe o no está inicializada!\n");
+        // fprintf(stderr, "Fallo precondición: alguna de las listas no existe o no está inicializada!\n");
         return -1;
     }
 
     if (la->raiz == NULL || la->ultimo == NULL || lb->raiz == NULL || lb->ultimo == NULL) {
-        fprintf(stderr, "Fallo precondición: No hay nodo ficticio en alguna de las listas\n");
+        // fprintf(stderr, "Fallo precondición: No hay nodo ficticio en alguna de las listas\n");
         return -2;
     }
     if (p == NULL || p == fin(la) || q == NULL) 
         return -3;
 
+    // excepciones
+    
     // poner el nodo en la posicion p de la en la posicion q de lb
     aux = p->sig;
     p->sig = p->sig->sig;
@@ -250,7 +252,7 @@ int concatenarListas(Lista *lA, Lista *lB)
 
     if (lA == NULL || lA->raiz == NULL || lB == NULL || lB->raiz == NULL)
     {
-        fprintf(stderr, "Fallo precondición: alguna de las listas no existe o no está inicializada!\n");
+        // fprintf(stderr, "Fallo precondición: alguna de las listas no existe o no está inicializada!\n");
         return -1;
     }
 
@@ -261,7 +263,7 @@ int concatenarListas(Lista *lA, Lista *lB)
         nuevo = (tipoCelda *)malloc(sizeof(tipoCelda));
         if (nuevo == NULL)
         {
-            fprintf(stderr, "Fallo reserva memoria en concatena!\n");
+            // fprintf(stderr, "Fallo reserva memoria en concatena!\n");
             return -4;
         }
         nuevo->elemento = actualB->elemento;
@@ -272,5 +274,11 @@ int concatenarListas(Lista *lA, Lista *lB)
 
         actualB = actualB->sig;
     }
+    // vaciar lB
+    lA->ultimo->sig = lB->raiz->sig;
+    lA->ultimo = lB->ultimo;
+    lB->raiz->sig = NULL;
+    lB->ultimo = lB->raiz;
+
     return 0;
 }

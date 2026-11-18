@@ -1,31 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
-#include "cola.h"
+#include "../colas/cola.h"
 
-c.tamanio = 0
+
+
+colaSuprime(Cola *c, tipoElemento *elemento): Si c == NULL, elemento == NULL o colaVacia(c) == 1, devolver error negativo. Guardar *elemento = c->frente->elemento;, aBorrar = c->frente;, avanzar c->frente = c->frente->sig;, y si c->frente == NULL (la cola se ha quedado vacía), poner también c->fondo = NULL;. Liberar aBorrar con free y devolver 0.
 
 int colaCreaVacia(Cola *c)
 {
-    c.frente = c.raiz
-    c.fondo = c.ultimo
+    if (c == NULL) return -1;
+    c->frente = NULL;
+    c->fondo = NULL;
+    return 0
 }
 
 int colaVacia(Cola *c)
 {  
-    if c == NULL return TRUE;
-    else return FALSE;
+    if (c == NULL) return -1;
+    else if (c->frente == NULL ||c->fondo == NULL) return 1
+    else return 0;
 }
 
 int colaInserta(Cola *c,tipoElemento elemento)
 {  
-    if (c.frente = c.fondo) return -5; // Cola llena
+    // FALTA hacer malloc
+    nuevo->elemento = elemento;
+    nuevo->sig = NULL;
+    
+    if (colaVacia(c) = 1)
+    {
+        c->frente = nuevo;
+        c->fondo = nuevo;
+    }
     else
     {
-        c.fondo++;
-        c.elemento[c.frente] = x;
-        c.tamanio += 1;
-    } 
+        c->fondo->sig = nuevo;
+        c->fondo = nuevo;
+    }
+    return 0; 
 }
 
 int colaSuprime(Cola *c, tipoElemento *elemento)

@@ -50,7 +50,10 @@ Para la entrega se deben completar los ficheros indicados en el enunciado de la 
       ├── pilas/        
       │   ├── pila.c    
       │   └── pila.h
+      ├── entregaTAD2026.pdf 
       ├── makefile       # Automatización de la compilación
+      ├── pruebaCola.c
+      ├── pruebaPila.c
       ├── pruebaRadixSort.c
       ├── radixSort.c
       ├── radixSort.h
