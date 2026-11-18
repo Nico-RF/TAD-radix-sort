@@ -1,5 +1,3 @@
-// Estos archivos se supone que son nuestro magic alonso para empezar
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -276,4 +274,3 @@ int concatenarListas(Lista *lA, Lista *lB)
     }
     return 0;
 }
-

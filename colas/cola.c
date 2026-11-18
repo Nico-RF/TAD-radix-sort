@@ -30,6 +30,11 @@ int colaInserta(Cola *c,tipoElemento elemento)
 
 int colaSuprime(Cola *c, tipoElemento *elemento)
 {
+    tipoCelda *aBorrar
+    
+    if (c == NULL)
+    else 
+
     if (colaVacia(c) == TRUE) return -6; // Cola vacía
     else 
     {

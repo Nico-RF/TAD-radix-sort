@@ -1,7 +1,7 @@
 /*
     LISTA DE COSAS POR HACER:
-    1. PONER BIEN LOS CODIGOS DE ERROR DE LOS RETURN
-    2. radixSort.h
+    1. PONER BIEN LOS CODIGOS DE ERROR DE LOS RETURN (con strdrr)
+    2. Rehacer la cola
     3. FUNCION distribuir (cifra, lista, *Grupos, *Ultimos)
     4. FUNCION concatenar (lista, *Grupos, *Ultimos)
 */  

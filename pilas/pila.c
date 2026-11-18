@@ -7,12 +7,12 @@
 
 int pilaCreaVacia(Pila *p)
 {
-    p.raiz = 0;
+    return(p.raiz = NULL);
 }
 
 int pilaVacia(Pila *p)
 {
-    if (p == 0) return TRUE;
+    if (p == NULL) return TRUE;
     else return FALSE;
 }
 
@@ -28,7 +28,7 @@ int pilaInserta(Pila *p,tipoElemento elemento)
 
 int pilaSuprime(Pila *p, tipoElemento *elemento)
 {
-   if (pilaCreaVacia(p) == TRUE) return -4; // Pila vacía
+   if (pilaVacia(p) == TRUE) return -4; // Pila vacía
    else
    {
         valor = p.elemento[p.raiz];
